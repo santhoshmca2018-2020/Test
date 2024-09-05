@@ -14,11 +14,11 @@ console.log(props.vehicle)
           <li key={index}>{item.brand} {item.color}</li>
         ))} 
         
-        {/* <li key={props.vehicle.id}>
+        <li key={props.vehicle.id}>
           {Object.entries(props).map(([key, value]) => (
             <p key={key}><strong>{key}:</strong> {value}</p>
           ))}
-        </li> */}
+        </li>
       </ul>
 
       <button type="submit" onClick={(e) => {shoot("Goal",e)}}>Hello</button>
