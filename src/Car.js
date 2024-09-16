@@ -12,6 +12,7 @@ console.log(props.vehicle)
 console.log(isGoal)
   return (
     <div>
+      
        {isGoal ? <MadeGoal/> : <MissedGoal/>}
       <h2>This is my Car Component</h2>
       <ul>
