@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 
+
 const Form = (props) => {
   const [input, setInput] = useState({});
 
@@ -40,6 +41,7 @@ const Form = (props) => {
             <option key={index} value={item} name={input.Favorite}>
               {item}
             </option>
+
           ))}
         </select>
         <input type="submit" />
