@@ -1,51 +1,47 @@
 import React, { useState } from "react";
-const gender = ["Male", "Female"];
-const Form = () => {
+
+
+const Form = (props) => {
   const [input, setInput] = useState({});
 
-  const handleOnChange = (e) => {
-    const name = e.target.name;
-    const value = e.target.value;
-    setInput((info) => ({ ...info, [name]: value }));
-  };
-
-  const handleSubmit = (e) => {
+  const loginForm = (e) => {
     e.preventDefault();
     console.log(input);
   };
+
+  const CollectLoginData = (e) => {
+    const name = e.target.name;
+    const value = e.target.value;
+    setInput((data) => ({ ...data, [name]: value }));
+  };
   return (
     <div>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={loginForm}>
         <label>Enter User Name</label>
         <input
           type="text"
           name="username"
           value={input.username || ""}
-          onChange={handleOnChange}
+          onChange={CollectLoginData}
         />
-        <label>Enter Age</label>
+        <label>Enter Password</label>
         <input
-          type="number"
-          name="age"
-          step={8}
-          value={input.age || ""}
-          onChange={handleOnChange}
+          type="password"
+          name="pass"
+          value={input.pass || ""}
+          onChange={CollectLoginData}
         />
-        <label>Enter your Address</label>
-        <textarea
-          name="address"
-          value={input.address || ""}
-          onChange={handleOnChange}
-        />
-
-        <label>Gender</label>
+        <label>Choose </label>
         <select
-          name="gender"
-          value={input.gender || ""}
-          onChange={handleOnChange}
+          name="Favorite"
+          value={input.Favorite || ""}
+          onChange={CollectLoginData}
         >
-          {gender.map((item) => (
-            <option>{item}</option>
+          {props.favorite.map((item, index) => (
+            <option key={index} value={item} name={input.Favorite}>
+              {item}
+            </option>
+
           ))}
         </select>
         <input type="submit" />

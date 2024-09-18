@@ -1,11 +1,12 @@
 import React from "react";
 import App from "./App";
 import Car from "./Car";
+import Form from "./Form";
 const Fruits = ["apple", "orange", "Banana"];
 const numbersOne = [1, 2, 3];
 const numbersTwo = [4, 5, 6];
-const [one,...remaining] = numbersOne;
-const combinedNo = [...numbersOne,...numbersTwo];
+const [one, ...remaining] = numbersOne;
+const combinedNo = [...numbersOne, ...numbersTwo];
 const vehicle = [
   {
     id: 1,
@@ -13,10 +14,10 @@ const vehicle = [
     color: "red",
     year: 2022,
     model: "S-Series",
-    registration:{
-      state:"karnataka",
-      pincode:560036,
-    }
+    registration: {
+      state: "karnataka",
+      pincode: 560036,
+    },
   },
   {
     id: 2,
@@ -24,35 +25,35 @@ const vehicle = [
     color: "Grey",
     year: 2022,
     model: "S-Series",
-    registration:{
-      state:"karnataka",
-      pincode:560090,
-    }
+    registration: {
+      state: "karnataka",
+      pincode: 560090,
+    },
   },
 ];
 
 const myVehicle = {
-  brand: 'Ford',
-  model: 'Mustang',
-  color: 'red'
-}
+  brand: "Ford",
+  model: "Mustang",
+  color: "red",
+};
 
 const updateMyVehicle = {
-  type: 'car',
-  year: 2021, 
-  color: 'yellow'
-}
+  type: "car",
+  year: 2021,
+  color: "yellow",
+};
 
-const UpdatedVehicle = {...myVehicle, ...updateMyVehicle};
+const UpdatedVehicle = { ...myVehicle, ...updateMyVehicle };
 
 console.log(UpdatedVehicle);
-const carColor = "red"
-
+const carColor = "red";
 
 const SecondComponent = (props) => {
   return (
     <div>
-      <Car vehicle={ vehicle} />
+      <Car vehicle={vehicle} />
+      <Form favorite={Fruits} />
       <h2>This is SecondComponent Component</h2>
       <ul>
         {Fruits.map((item, index) => (
@@ -62,14 +63,15 @@ const SecondComponent = (props) => {
       </ul>
       <ul>
         {vehicle.map((item, index) => (
-           <li key={index}>
-            {item.id} {item.brand} {item.color} {item.model} {item.registration.state} {item.registration.pincode}
+          <li key={index}>
+            {item.id} {item.brand} {item.color} {item.model}{" "}
+            {item.registration.state} {item.registration.pincode}
           </li>
         ))}
       </ul>
 
-     <h1>{combinedNo}</h1>
-     <p id="demo"></p>
+      <h1>{combinedNo}</h1>
+      <p id="demo"></p>
     </div>
   );
 };
