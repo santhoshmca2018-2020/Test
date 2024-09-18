@@ -32,7 +32,6 @@ const Car = (props) => {
       <button type="submit" onClick={(e) => shoot("Goal", e)}>
         Hello
       </button>
-      <Form />
     </div>
   );
 };

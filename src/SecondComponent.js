@@ -1,6 +1,7 @@
 import React from "react";
 import App from "./App";
 import Car from "./Car";
+import Form from "./Form";
 const Fruits = ["apple", "orange", "Banana"];
 const numbersOne = [1, 2, 3];
 const numbersTwo = [4, 5, 6];
@@ -52,6 +53,7 @@ const SecondComponent = (props) => {
   return (
     <div>
       <Car vehicle={vehicle} />
+      <Form favorite={Fruits} />
       <h2>This is SecondComponent Component</h2>
       <ul>
         {Fruits.map((item, index) => (
