@@ -1,6 +1,7 @@
 import React from "react";
 import MadeGoal from "./MadeGoal";
 import MissedGoal from "./MissedGoal";
+import Form from "./Form";
 const isGoal = true;
 
 const shoot = (a,b) => {
@@ -28,7 +29,7 @@ console.log(isGoal)
       </ul>
 
       <button type="submit" onClick={(e)=> shoot("Goal",e)}>Hello</button>
-     
+     <Form/>
     </div>
   );
 };
