@@ -21,6 +21,7 @@ const Car = (props) => {
             {item.brand} {item.color}
           </li>
         ))}
+
         <li key={props.vehicle.id}>
           {/* {Object.entries(props).map(([key, value]) => (
             <p key={key}><strong>{key}:</strong> {value}</p>
@@ -28,11 +29,9 @@ const Car = (props) => {
         </li>
       </ul>
 
-
       <button type="submit" onClick={(e) => shoot("Goal", e)}>
         Hello
       </button>
-
     </div>
   );
 };
